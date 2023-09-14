@@ -1,7 +1,7 @@
 #code to return snippets for each keyword as found in keywords, from google search
 
 import requests
-import keywords
+from keywords import keywords_all
 
 def search_google(query, api_key, cx):
     url = 'https://www.googleapis.com/customsearch/v1'
@@ -26,7 +26,7 @@ def search_google(query, api_key, cx):
         return None, None
 
 # Example usage
-for i in keywords:
+for i in keywords_all:
     
     api_key = 'AIzaSyBPzMQhIAOQzaK7GfrZBUI8BE8sYqkgVMI'
     cx = 'b2793d053345043ec'

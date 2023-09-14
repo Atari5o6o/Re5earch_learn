@@ -21,7 +21,7 @@ for entity, label in entities:
 # Add relationships as edges to the graph
 for relationship, entities_involved in relationships:
     for entity in entities_involved:
-        graph.add_edge(entity, relationship)
+        graph.add_edge(entity[0:5], relationship[0:5])
 
 # Set node positions for better visualization layout
 pos = nx.spring_layout(graph)

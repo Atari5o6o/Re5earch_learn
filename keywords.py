@@ -10,7 +10,7 @@ def extract_keywords_with_preference(text, title, abstract):
     sentences = sent_tokenize(text)
 
     # Initialize an empty dictionary to store keywords and their scores
-    keywords = {}
+    keywords_all = {}
 
     # Define the set of allowed POS tags (specific to your needs)
     allowed_pos = ['NN', 'NNS']  # Example: Common nouns only
@@ -41,12 +41,12 @@ def extract_keywords_with_preference(text, title, abstract):
                 score += 1  # Increase score if word appears in the abstract
 
             # Update the keyword dictionary with the word and its score
-            if word in keywords:
-                keywords[word] += score
+            if word in keywords_all:
+                keywords_all[word] += score
             else:
-                keywords[word] = score
+                keywords_all[word] = score
 
-    return keywords
+    return keywords_all
 
 paper_title = input("Enter the title of the paper")
 paper_abstract = input("Enter the abstract")
@@ -59,6 +59,6 @@ sorted_keywords = sorted(keywords_with_preference.items(), key=lambda x: x[1], r
 
 # Print the top 10 keywords with their scores
 print("Keywords with Preference (Top 10):")
-for keyword, score in sorted_keywords[:10]:
-    print(keyword, ":", score)
+for keyword_all, score in sorted_keywords[:10]:
+    print(keyword_all, ":", score)
 
