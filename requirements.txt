@@ -1,0 +1,11 @@
+from PyPDF2 import PdfReader
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.stem import WordNetLemmatizer
+import spacy
+from spacy import displacy
+import networkx as nx
+import matplotlib.pyplot as plt
+import requests
+from bs4 import BeautifulSoup

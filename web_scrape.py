@@ -1,5 +1,6 @@
 #code to return snippets for each keyword as found in keywords, from google search
-
+import os
+from dotenv import load_dotenv
 import requests
 from keywords import keywords_all
 
@@ -28,8 +29,8 @@ def search_google(query, api_key, cx):
 # Example usage
 for i in keywords_all:
     
-    api_key = 'AIzaSyBPzMQhIAOQzaK7GfrZBUI8BE8sYqkgVMI'
-    cx = 'b2793d053345043ec'
+    api_key = os.getenv('api_key')
+    cx = os.getenv('cx')
 
     top_url, snippet = search_google(i, api_key, cx)
     if top_url and snippet:
