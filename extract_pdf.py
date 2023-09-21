@@ -2,7 +2,7 @@
 from PyPDF2 import PdfReader
 
 
-pdf_file_path = '/Users/anmol/Developer/Projects/Research paper service/basics-of-calculus-simplified.pdf'
+pdf_file_path = 'basics-of-calculus-simplified.pdf'
 all_text = ""
 
 # creating a pdf reader object
